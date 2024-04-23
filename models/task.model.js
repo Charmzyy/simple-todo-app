@@ -1,6 +1,6 @@
 const { Timestamp } = require("mongodb");
 const mongoose = require("mongoose");
-
+const moment = require('moment');
 const taskSchema = mongoose.Schema(
   {
     name: {
@@ -21,6 +21,13 @@ const taskSchema = mongoose.Schema(
     },
     dueDate: {
       type: Date,
+      validate : {
+        validator : function(value) {
+          return moment(value).startOf('day') >= moment().startOf('day');
+
+        },
+        message : "Due date must in the future today"
+      },
     },
   },
   {
