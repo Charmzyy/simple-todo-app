@@ -1,7 +1,8 @@
 
 const express = require("express");
 
-const taskRoute = require("./Routes/task.route");
+const taskRoute = require('./routes/task.route');
+const authRoute = require('./routes/auth.routes');
 const db = require('./Config/db');
 
 const app = express();
@@ -15,6 +16,7 @@ db();
 //routes
 
 app.use("/api/tasks", taskRoute);
+app.use('/api/auth',authRoute)
 app.get('/hello', (req,res)=>{
   res.status(200).json({message : "Hello node server"});
 })
