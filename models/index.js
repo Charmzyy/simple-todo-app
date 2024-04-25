@@ -1,5 +1,5 @@
-const Product = require('./task.model')
+const Task = require('./task.model')
 
 module.exports = {
-    Product,
+    Task,
 }

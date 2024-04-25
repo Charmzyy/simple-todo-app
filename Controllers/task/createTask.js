@@ -1,4 +1,4 @@
-const Task = require("../../models");
+const {Task} = require("../../models");
 const createTask = async (req, res) => {
   try {
     const newTask = await Task.create(req.body);
@@ -9,6 +9,4 @@ const createTask = async (req, res) => {
 };
 
 
-module.exports = {
-    createTask
-}
+module.exports = createTask;

@@ -1,4 +1,4 @@
-const Task = require("../../models");
+const {Task} = require("../../models");
 
 const getAll = async (req, res) => {
     try {
@@ -8,3 +8,6 @@ const getAll = async (req, res) => {
         res.status(500).json({ message: error.message });
       }
     };
+
+    module.exports =   getAll;
+  

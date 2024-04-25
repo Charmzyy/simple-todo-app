@@ -1,4 +1,4 @@
-const Task = require("../../models");
+const {Task} = require("../../models");
 const deleteTask = async (req, res) => {
     try {
   const {id} = req.params;
@@ -12,3 +12,5 @@ const deleteTask = async (req, res) => {
       res.status(500).json({ message: error.message });
     }
   };
+
+module.exports = deleteTask;

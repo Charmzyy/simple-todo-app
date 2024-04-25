@@ -1,4 +1,4 @@
-const Task = require("../../models");
+const {Task} = require("../../models");
 const getTask = async (req, res) => {
     try {
       const { id } = req.params;
@@ -11,3 +11,5 @@ const getTask = async (req, res) => {
       res.status(500).json({ message: error.message });
     }
   };
+
+  module.exports =  getTask;
