@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { task } = require("../Controllers");
+const { task } = require("../controllers");
 
  //Define
 router.get("/getall", task.getAll);
