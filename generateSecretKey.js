@@ -1,7 +1,10 @@
 const crypto = require('crypto');
 
-const generateSecretKey = () => {
-    return crypto.randomBytes(64).toString('hex');
+// Generate a random string
+const generateRandomString = (length) => {
+    return crypto.randomBytes(length).toString('hex');
 };
 
-console.log(generateSecretKey());
+// Usage
+const secretKey = generateRandomString(32); // 32 bytes (256 bits) is a common size for secret keys
+console.log(secretKey)

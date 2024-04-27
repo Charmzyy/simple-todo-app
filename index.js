@@ -16,7 +16,7 @@ db();
 //routes
 
 app.use("/api/tasks", taskRoute);
-app.use('/api/auth',authRoute)
+app.use('/api/auth',authRoute);
 app.get('/hello', (req,res)=>{
   res.status(200).json({message : "Hello node server"});
 })
