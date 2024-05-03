@@ -29,6 +29,11 @@ const taskSchema = mongoose.Schema(
         message : "Due date must in the future today"
       },
     },
+    creator: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User', // Assuming you have a User model
+      required: true
+    }
   },
   {
     timestamps: true,

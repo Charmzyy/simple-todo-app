@@ -4,6 +4,8 @@ const {User} = require('../../models/')
 
 
 const register = async (req,res) => {
+   const existingUsers = User.find();
+   const firstUser = existingUsers.length ===0;
    
 try {
  
@@ -14,6 +16,13 @@ const newUser = await User.create({
    email : req.body.email,
    password : hashedPassword
 });
+
+if(firstUser)
+User.roles = ['admin']
+
+await newUser.save();
+
+
 res.status(200).json({ newUser });
 
 
